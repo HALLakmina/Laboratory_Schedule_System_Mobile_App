@@ -9,17 +9,15 @@
 
 import React from 'react';
 import {SafeAreaView, ScrollView, Text, Button} from 'react-native';
-import LoginButton from './Resources/Components/LoginButton';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
-import LoginScreen from './Resources/Screens/LoginScreen';
+import { NavigationContainer } from '@react-navigation/native';
+import MainNavigationBar from './Resources/Router/MainNavigationBar';
 
 function App(): JSX.Element {
   return (
-    <SafeAreaView>
-      <KeyboardAwareScrollView keyboardShouldPersistTaps={'never'}>
-        <LoginScreen/>
-      </KeyboardAwareScrollView>
-    </SafeAreaView>
+    <NavigationContainer>
+      <MainNavigationBar/>
+    </NavigationContainer>
   );
 }
 
