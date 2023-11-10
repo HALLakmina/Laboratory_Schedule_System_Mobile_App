@@ -2,7 +2,7 @@
 /* eslint-disable react-native/no-inline-styles */
 /* eslint-disable prettier/prettier */
 /* eslint-disable prettier/prettier */
-import { View, Text, SafeAreaView, StyleSheet} from 'react-native';
+import { View, Text, SafeAreaView, StyleSheet, Image, ScrollView} from 'react-native';
 import React from 'react';
 import LinearGradient from 'react-native-linear-gradient';
 import UserLoginButton from '../Components/UserLoginButton';
@@ -16,7 +16,22 @@ const IndexHomeScreen = () => {
         </View>
       </LinearGradient>
       <View style={styles.bodyView}>
-        <Text>News</Text>
+      <Image style={{width:'100%',height:'100%', position:'absolute'}}  source={ require('../../Assets/images/pexels-polina-zimmerman-3747486.jpg')}/>
+        <ScrollView>
+          <View style={styles.scrollContainer}>
+            <View style={styles.newsCard}>
+              <View style={{width:'100%',height:200, backgroundColor:'red',borderRadius:10}}>
+                <Image style={{width:'100%',height:'100%',borderTopLeftRadius:10,borderTopRightRadius:10}}  source={ require('../../Assets/images/pexels-polina-zimmerman-3747486.jpg')}resizeMode="cover"/>
+              </View>
+              <ScrollView style={{margin:10}} nestedScrollEnabled={true}>
+                <Text style={{margin:10}}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem suscipit, sequi optio atque natus ut ea animi minus architecto illo sit? Excepturi eius ab hic dolores deleniti repellendus asperiores iure.</Text>
+              </ScrollView>
+            </View>
+            <View style={styles.newsCard}>
+              <Text>News</Text>
+            </View>
+          </View>
+        </ScrollView>
       </View>
     </SafeAreaView>
   );
@@ -42,6 +57,20 @@ const styles = StyleSheet.create({
     {
         backgroundColor: 'green',
         flex:1,
+    },
+    scrollContainer:
+    {
+      alignItems: 'center',
+      marginTop:20,
+    },
+    newsCard:
+    {
+      width:300,
+      height:400,
+      backgroundColor:'white',
+      borderRadius:10,
+      margin:10,
+      alignItems: 'center',
     },
 });
 
