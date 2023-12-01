@@ -7,12 +7,14 @@ import React from 'react';
 import LinearGradient from 'react-native-linear-gradient';
 import UserLoginButton from '../Components/UserLoginButton';
 
-const IndexHomeScreen = () => {
+const IndexHomeScreen = (ls_props:any) => {
+  const stack = ls_props.navigation;
+
   return (
     <SafeAreaView style={styles.mainView}>
       <LinearGradient colors={['#6F4CFF', '#595EFC', '#59BBFC']} start={{x: 0.0, y: 0.01 }} end={{x: 1.0, y: 1.0}} style={styles.headerView}>
         <View style={{alignItems:'flex-end', justifyContent:'center', padding:5}}>
-          <UserLoginButton/>
+          <UserLoginButton lb_stack={stack}/>
         </View>
       </LinearGradient>
       <View style={styles.bodyView}>

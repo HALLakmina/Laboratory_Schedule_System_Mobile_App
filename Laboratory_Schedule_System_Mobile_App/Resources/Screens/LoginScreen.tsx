@@ -13,6 +13,7 @@ import React from 'react';
 import CustomTextBox from '../Components/CustomTextBox';
 import LoginButton from '../Components/LoginButton';
 import LinearGradient from 'react-native-linear-gradient';
+import 'react-native-gesture-handler';
 
 const LoginScreen = () => {
     const handleKeyboardDismiss = () => {
